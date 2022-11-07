@@ -4,10 +4,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "just": "#ff8181",
-        "just2nd": "#303179"
+        "just": "#183a55",
+        "just2nd": "#03C0A8"
       }
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
+  daisyui: {
+    themes: ["light", "dark",]
+  },
 }
