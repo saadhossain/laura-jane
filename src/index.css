@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.jane-btn{
+    background-color: #183a55;
+    padding: 10px 40px;
+    border-radius: 20px;
+    color:#fff;
+    font-weight: 600;
+    transition: 0.3s all ease-in-out;
+}
+.jane-btn:hover{
+    background-color: #03C0A8;
+}
