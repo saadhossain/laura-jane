@@ -6,7 +6,7 @@ const ServiceDetails = () => {
     // console.log(service[0]);
     const { _id, name, description, img, serviceCost, completedCase, rating } = service;
     return (
-        <div className='w-11/12 lg:w-10/12 mx-auto my-5 flex gap-10'>
+        <div className='w-11/12 lg:w-10/12 mx-auto my-5 lg:flex gap-10'>
             <div className='w-full lg:w-2/5 relative bg-slate-100 rounded-lg shadow-xl'>
                 <img src={img} alt={name} className='w-full rounded-t-lg' />
                 <button className='bg-jane2nd rounded-lg py-1 px-2 text-white font-semibold absolute top-2 left-2 shadow-xl'>Success :{completedCase} Case</button>
