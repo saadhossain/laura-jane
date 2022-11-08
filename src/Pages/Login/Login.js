@@ -1,12 +1,30 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Context/AuthProvider';
 
 const Login = () => {
+    const {userLogin} = useContext(AuthContext);
+
+    const handleLogin = (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        userLogin(email, password)
+        .then((result)=> {
+            const user = result.user;
+            console.log(user);
+            toast.success('Login Successful...')
+        })
+        .catch(err => console.error(err))
+        form.reset()
+    }
     return (
         <div className='flex justify-center my-5'>
             <div className="w-full max-w-md p-8 space-y-3 rounded-xl bg-jane text-white">
                 <h1 className="text-2xl font-bold text-center">Sign In Your Account</h1>
-                <form novalidate="" action="" className="space-y-6 ng-untouched ng-pristine ng-valid">
+                <form onSubmit={handleLogin} className="space-y-6 ng-untouched ng-pristine ng-valid">
                     <div className="space-y-1 text-lg">
                         <label htmlFor="email" className="block">Email Address</label>
                         <input type="text" name="email" id="email" placeholder="Email Address" className="w-full px-4 py-3 rounded-md text-gray-900" />
@@ -18,7 +36,7 @@ const Login = () => {
                             <Link rel="noopener noreferrer" href="#">Forgot Password?</Link>
                         </div>
                     </div>
-                    <button className="block w-full p-3 text-center text-gray-900 font-bold bg-jane2nd rounded-3xl">Sign in</button>
+                    <button type='submit' className="block w-full p-3 text-center text-gray-900 font-bold bg-jane2nd rounded-3xl">Sign in</button>
                 </form>
                 <div className="flex items-center pt-4 space-x-1">
                     <div className="flex-1 h-px sm:w-16 bg-white"></div>
