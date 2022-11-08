@@ -4,7 +4,6 @@ import HomeCarousel from '../../Componets/HomeCarousel';
 import ServicesShowcase from '../../Componets/ServicesShowcase';
 const Home = () => {
     const [services, setServices] = useState([])
-    console.log(services);
     useEffect(() => {
         fetch('http://localhost:5000/services/limit')
             .then(res => res.json())

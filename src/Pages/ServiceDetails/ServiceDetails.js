@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
+import ReviewShowCase from '../../Componets/ReviewShowCase';
 
 const ServiceDetails = () => {
+    //Get Single Service from the loader
     const service = useLoaderData()[0]
-    // console.log(service[0]);
     const { _id, name, description, img, serviceCost, completedCase, rating } = service;
+    //Get the All Reviews for a Single Service
+    const [reviews, setReviews] = useState([]);
+    //Fetch Data using query, while quering pass single service id;
+    useEffect(()=> {
+        fetch(`http://localhost:5000/reviews?serviceId=${_id}`)
+        .then(res=> res.json())
+        .then(data => setReviews(data))
+    }, [_id])
+
     return (
         <div className='w-11/12 lg:w-10/12 mx-auto my-5 lg:flex gap-10'>
             <div className='w-full lg:w-2/5 relative bg-slate-100 rounded-lg shadow-xl'>
@@ -25,7 +35,14 @@ const ServiceDetails = () => {
                 </div>
             </div>
             <div className='w-full lg:w-2/5'>
-                <h1>Right SideBar</h1>
+                <div className='grid gri-cols-2 gap-2'>
+                    {
+                        reviews.map(review => <ReviewShowCase
+                            key={review._id}
+                            review={review}
+                        ></ReviewShowCase>)
+                    }
+                </div>
             </div>
         </div>
     );
