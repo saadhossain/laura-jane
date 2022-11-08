@@ -7,7 +7,7 @@ const ServicesShowcase = ({service}) => {
         <div>
             <div className="rounded-lg shadow-xl w-full bg-[#ebebeb] text-gray-900 relative">
                 <img src={img} alt={name} className="w-full h-60 rounded-t-lg" />
-                <button className='bg-jane rounded-lg py-1 px-2 text-white font-semibold absolute top-2 left-2 shadow-xl'>Success :{completedCase} Case</button>
+                <button className='bg-jane2nd rounded-lg py-1 px-2 text-white font-semibold absolute top-2 left-2 shadow-xl'>Success :{completedCase} Case</button>
                 <div className="p-3">
                     <div className="flex items-center justify-between">
                         <div className="flex items-center space-x-3">
