@@ -1,4 +1,3 @@
-import { reload } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
 import { Link, useLoaderData } from 'react-router-dom';
@@ -39,7 +38,6 @@ const WriteAReview = () => {
             .then(data => {
                 if (data.acknowledged) {
                     toast.success('Review Added Successfully...')
-                    reload()
                 }
             })
             .catch(err => console.error(err))
