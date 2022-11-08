@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { MdRateReview } from 'react-icons/md';
 import { Link, useLoaderData } from 'react-router-dom';
 import ReviewShowCase from '../../Componets/ReviewShowCase';
+import { AuthContext } from '../../Context/AuthProvider';
 
 const ServiceDetails = () => {
+    //Get user from the Context/Auth
+    const { user } = useContext(AuthContext)
     //Get Single Service from the loader
     const service = useLoaderData()[0]
     const { _id, name, description, img, serviceCost, completedCase, rating } = service;
@@ -38,9 +41,10 @@ const ServiceDetails = () => {
             <div className='w-full lg:w-2/4'>
                 <div className='flex justify-between items-center bg-jane p-2 rounded-lg mt-5 lg:mt-0 mb-5 text-white'>
                     <h2 className='text-xl lg:text-3xl font-semibold'>Clients Feedback</h2>
+
                     <Link to={`/write-review/${_id}`} className='flex items-center gap-2 font-semibold'>
                         <MdRateReview className='h-8 w-8'></MdRateReview>
-                        Write Review
+                        {user?.email ? 'Write A Review' : 'Login to Write Review'}
                     </Link>
                 </div>
                 <div className='grid lg:grid-cols-2 gap-5 lg:gap-2'>
