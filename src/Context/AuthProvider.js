@@ -7,6 +7,8 @@ const AuthProvider = ({children}) => {
     const auth = getAuth(app);
     //Set User to a State
     const [user, setUser] = useState()
+    //Create a Loading state to prevent system return user to login page every time refresh the page if he/she visit private route
+    const [loading, setLoading] = useState(true)
     //Create or Register New user using Emai and Password
     const userRegistration = (email, password) => {
         return createUserWithEmailAndPassword(auth, email, password);
@@ -30,10 +32,11 @@ const AuthProvider = ({children}) => {
     useEffect(()=>{
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser)
+            setLoading(false)
         })
         return () => unsubscribe()
     }, [auth])
-    const userInfo = {user, userRegistration, updateUser, userLogin, logOut}
+    const userInfo = {user, userRegistration, updateUser, userLogin, logOut, loading}
     return (
         <div>
             <AuthContext.Provider value={userInfo}>

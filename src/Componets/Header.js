@@ -26,7 +26,7 @@ const Header = () => {
                     <ul className={`z-50 lg:flex items-center gap-3 text-lg font-semibold absolute lg:static duration-500 ease-in-out bg-jane lg:bg-transparent py-2 lg:py-0 px-10 lg:px-0 rounded-b-lg ${expandNav ? 'top-10 right-0': 'top-[-200px] right-0'}`}>
                         <li className='text-white lg:text-black lg:hover:text-jane'><Link to='/'>Home</Link></li>
                         <li className='text-white lg:text-black lg:hover:text-jane'><Link to='/services'>Services</Link></li>
-                        <li className='text-white lg:text-black lg:hover:text-jane'><Link to='/services'>About Us</Link></li>
+                        <li className='text-white lg:text-black lg:hover:text-jane'><Link to='/services'>About</Link></li>
                         <li className='text-white lg:text-black lg:hover:text-jane'><Link to='/blogs'>Blogs</Link></li>
                         {/* Conditional Rendering on Header */}
                         {
