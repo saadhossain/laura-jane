@@ -1,0 +1,13 @@
+.rating-btn{
+    background-color: #03C0A8;
+    padding: 5px 10px;
+    border-radius: 10%;
+    cursor: pointer;
+}
+.selected{
+    background-color: #fff;
+    padding: 5px 10px;
+    color:#000;
+    border-radius: 10%;
+    cursor: pointer;
+}

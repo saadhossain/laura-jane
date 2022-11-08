@@ -18,7 +18,7 @@ const Header = () => {
         .catch(err => console.error(err))
     }
     return (
-        <div className='py-2 bg-jane lg:bg-transparent'>
+        <div className='py-2 bg-jane lg:bg-transparent shadow-md'>
             <div className='w-11/12 lg:w-10/12 mx-auto flex items-center justify-between'>
                 <Link to='/'><img src={logo} alt='Justicely Logo' className='h-10 hidden lg:block'/></Link>
                 <img src={logoWhite} alt='Justicely Logo' className='h-10 lg:hidden'/>
@@ -35,7 +35,7 @@ const Header = () => {
                             ? <>
                             <li className='text-white lg:text-black lg:hover:text-jane'><Link to='/add-service'>Add Service</Link></li>
                             <img src={user?.photoURL ? user.photoURL : 'https://i.ibb.co/mzkVLJt/profile.png'} alt={user?.displayName ? user.displayName : 'Your Profile'} className='w-8 rounded-full'/>
-                            <AiOutlineLogout onClick={handleLogOut} className='w-6 h-6 text-jane2nd cursor-pointer'></AiOutlineLogout>
+                            <AiOutlineLogout onClick={handleLogOut} className='w-6 h-6 text-white cursor-pointer bg-jane rounded-full p-1'></AiOutlineLogout>
                             </>
                             
                             :<li className='text-white lg:text-black lg:hover:text-jane'><Link to='/login'>Login</Link></li>

@@ -8,7 +8,7 @@ const ReviewShowCase = ({ review }) => {
             <div className="rounded-md shadow-md bg-gray-200 text-gray-900">
                 <div className="flex items-center p-3 pb-1 gap-2 border-b-[1px] border-gray-500 mx-5">
                     <img src={reviewerImg} alt={reviewerName} className="w-20 h-20 rounded-full shadow-lg" />
-                    <h2 className="text-sm font-semibold leading-none">{reviewerName}</h2>
+                    <h2 className="text-lg font-semibold leading-none">{reviewerName}</h2>
                 </div>
                 <div className="p-5 pt-2">
                     <div className='flex justify-between items-center'>
