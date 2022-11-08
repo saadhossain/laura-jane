@@ -83,7 +83,7 @@ const AddService = () => {
                             <input onBlur={handleFieldValue} type="number" name="rating" id="rating" placeholder="E.g. 4.9" className="w-full px-4 py-3 rounded-md text-gray-900" />
                         </div>
                         <div>
-                            <label htmlFor="totalRate" className="text-md font-semibold">Completed Case</label>
+                            <label htmlFor="totalRate" className="text-md font-semibold">Total Feedback</label>
                             <input onBlur={handleFieldValue} type="digit" name="totalRate" id="totalRate" placeholder="E.g. 490" className="w-full px-4 py-3 rounded-md text-gray-900" />
                         </div>
                     </div>
