@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
+import toast from 'react-hot-toast';
 import { AuthContext } from '../../Context/AuthProvider';
 import MyReviewDisplay from './MyReviewDisplay';
 import MyServiceDisplay from './MyServiceDisplay';
@@ -46,6 +47,26 @@ const MyReviewsServices = () => {
         .catch(err => console.error(err))
     }, [email, logOut])
 
+    //Review Delete Functionality
+    const deleteReview = (id) => {
+        const confirmation = window.confirm('Do you want to Delete This Review?')
+        if(confirmation){
+            fetch(`http://localhost:5000/reviews/delete/${id}`, {
+                method:'DELETE'
+            })
+            .then(res => res.json())
+            .then(data => {
+                if(data.deletedCount > 0){
+                    toast.success('Your Review Deleted')
+                    const remainingReview = reviews.filter(review => review._id !== id)
+                    setReviews(remainingReview)
+                }
+            })
+            .catch(err => console.error(err))
+        }
+    }
+    //Service Delete Functionality
+
     return (
         <div className='bg-slate-100'>
             <div className='w-11/12 lg:w-10/12 mx-auto py-5 lg:flex lg:gap-10'>
@@ -56,6 +77,7 @@ const MyReviewsServices = () => {
                         reviews?.map(review=> <MyReviewDisplay
                             key={review._id}
                             review={review}
+                            deleteReview={deleteReview}
                         ></MyReviewDisplay>)
                         }
                     </div>

@@ -3,7 +3,7 @@ import { BiMessageSquareEdit } from 'react-icons/bi';
 import { MdDeleteForever } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 
-const MyReviewDisplay = ({ review }) => {
+const MyReviewDisplay = ({ review, deleteReview }) => {
     const { _id, reviewerName, description, rating } = review;
 
     return (
@@ -16,9 +16,9 @@ const MyReviewDisplay = ({ review }) => {
                 <p className='py-3'>{description}</p>
                 <div className='flex justify-end'>
                     <Link to={`/review/edit/${_id}`}>
-                        <BiMessageSquareEdit className='h-5 w-5 lg:h-6 lg:w-8 text-green-700'></BiMessageSquareEdit>
+                        <BiMessageSquareEdit className='h-5 w-5 lg:h-6 lg:w-8 text-green-700' title='Edit Review'></BiMessageSquareEdit>
                     </Link>
-                    <MdDeleteForever className='h-5 w-5 lg:h-6 lg:w-8 text-red-600'></MdDeleteForever>
+                    <MdDeleteForever onClick={()=> deleteReview(_id)} className='h-5 w-5 lg:h-6 lg:w-8 text-red-600 cursor-pointer' title='Delete Review'></MdDeleteForever>
                 </div>
             </div>
         </div>
