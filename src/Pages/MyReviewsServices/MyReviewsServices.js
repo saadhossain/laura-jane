@@ -66,7 +66,23 @@ const MyReviewsServices = () => {
         }
     }
     //Service Delete Functionality
-
+    const deleteService = (id) => {
+        const confirmation = window.confirm('Do you want to Delete This Service?')
+        if(confirmation){
+            fetch(`http://localhost:5000/services/delete/${id}`, {
+                method:'DELETE'
+            })
+            .then(res => res.json())
+            .then(data => {
+                if(data.deletedCount > 0){
+                    toast.success('Services has been deleted...')
+                    const remainingService = services.filter(service => service._id !== id)
+                    setServices(remainingService)
+                }
+            })
+            .catch(err => console.error(err))
+        }
+    }
     return (
         <div className='bg-slate-100'>
             <div className='w-11/12 lg:w-10/12 mx-auto py-5 lg:flex lg:gap-10'>
@@ -89,6 +105,7 @@ const MyReviewsServices = () => {
                         services?.map(service => <MyServiceDisplay
                         key={service._id}
                         service={service}
+                        deleteService={deleteService}
                         ></MyServiceDisplay>) 
                         }
                     </div>

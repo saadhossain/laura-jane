@@ -3,7 +3,7 @@ import { BiMessageSquareEdit } from 'react-icons/bi';
 import { MdDeleteForever } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 
-const MyServiceDisplay = ({ service }) => {
+const MyServiceDisplay = ({ service, deleteService}) => {
     const { _id, img, name, serviceCost, completedCase, description, rating } = service;
 
     return (
@@ -29,9 +29,9 @@ const MyServiceDisplay = ({ service }) => {
                 <p className='py-3'>{description}</p>
                 <div className='flex justify-end'>
                     <Link to={`/service/edit/${_id}`}>
-                        <BiMessageSquareEdit className='h-5 w-5 lg:h-6 lg:w-8 text-green-700'></BiMessageSquareEdit>
+                        <BiMessageSquareEdit className='h-5 w-5 lg:h-6 lg:w-8 text-green-700' title='Edit Service'></BiMessageSquareEdit>
                     </Link>
-                    <MdDeleteForever className='h-5 w-5 lg:h-6 lg:w-8 text-red-600'></MdDeleteForever>
+                    <MdDeleteForever onClick={()=> deleteService(_id)} className='h-5 w-5 lg:h-6 lg:w-8 text-red-600 cursor-pointer' title='Delete Service'></MdDeleteForever>
                 </div>
             </div>
         </div>
