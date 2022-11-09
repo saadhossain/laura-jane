@@ -5,26 +5,46 @@ import MyServiceDisplay from './MyServiceDisplay';
 
 const MyReviewsServices = () => {
     //Get the user from Context/Auth
-    const {user} = useContext(AuthContext);
+    const {user, logOut} = useContext(AuthContext);
     const email = user?.email;
     //Get the Reviews for logged in users
     const [reviews, setReviews] = useState();
     //Get the Services added by the logged in users
     const [services, setServices] = useState();
-    //Fetch Services from the server using email as query string
-    useEffect(()=> {
-        fetch(`http://localhost:5000/services?email=${email}`)
-        .then(res => res.json())
-        .then(data => setServices(data))
-        .catch(err => console.error(err))
-    }, [email])
     //Fetch Reviews from the server using email as query string
     useEffect(()=> {
-        fetch(`http://localhost:5000/reviews?email=${email}`)
-        .then(res => res.json())
+        fetch(`http://localhost:5000/reviews?email=${email}`,{
+            headers: {
+                'authorization' : `Bearer ${localStorage.getItem('Access_Token')}`
+            }
+        })
+        .then(res => {
+            //logout user if token doesn't match
+            if(res.status === 401 || res.status === 403){
+                return logOut()
+            }
+            return res.json()
+        })
         .then(data => setReviews(data))
         .catch(err => console.error(err))
-    }, [email]);
+    }, [email, logOut]);
+    //Fetch Services from the server using email as query string
+    useEffect(()=> {
+        fetch(`http://localhost:5000/services?email=${email}`, {
+            headers: {
+                'authorization' : `Bearer ${localStorage.getItem('Access_Token')}`
+            }
+        })
+        .then(res => {
+            //logout user if token doesn't match
+            if(res.status === 401 || res.status === 403){
+                return logOut()
+            }
+            return res.json()
+        })
+        .then(data => setServices(data))
+        .catch(err => console.error(err))
+    }, [email, logOut])
 
     return (
         <div className='bg-slate-100'>
