@@ -22,7 +22,8 @@ const WriteAReview = () => {
         reviewerName: reviewDetails?.reviewerName,
         rating: rating,
         reviewerImg: reviewDetails?.reviewerImage,
-        description: reviewDetails?.description
+        description: reviewDetails?.description,
+        addedOn: new Date()
     }
     //Handle Adding Review functionality
     const handleAddReview = (e) => {

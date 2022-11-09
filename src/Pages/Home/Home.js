@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import AboutSection from '../../Componets/AboutSection';
 import HomeCarousel from '../../Componets/HomeCarousel';
+import PersonalizedAttention from '../../Componets/PersonalizedAttention';
+import ReputationSection from '../../Componets/ReputationSection';
 import ServicesShowcase from '../../Componets/ServicesShowcase';
 const Home = () => {
     const [services, setServices] = useState([])
@@ -24,6 +27,9 @@ const Home = () => {
             <div className='flex justify-center my-5'>
                 <Link to='/services'><button className='jane-btn'>Show All Service</button></Link>
             </div>
+            <AboutSection></AboutSection>
+            <ReputationSection></ReputationSection>
+            <PersonalizedAttention></PersonalizedAttention>
         </div>
     );
 };

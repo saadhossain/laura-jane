@@ -27,12 +27,13 @@ const AddService = () => {
             rate: serviceDetails?.rating
         },
         img: serviceDetails?.serviceImg,
-        addedBy: user.email
+        addedBy: user.email,
+        addedOn : new Date()
     }
     //Handle Post/Create/Add new Service
     const handleAddService = (e) => {
         e.preventDefault()
-        console.log(serviceDetails);
+        console.log(serviceData);
         fetch('http://localhost:5000/services/add', {
             method: 'POST',
             headers: {
