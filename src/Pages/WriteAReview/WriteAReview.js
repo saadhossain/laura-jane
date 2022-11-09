@@ -6,6 +6,7 @@ import './WriteReview.css';
 
 const WriteAReview = () => {
     const { user } = useContext(AuthContext);
+    //Get single Service we are writing review on it
     const service = useLoaderData()[0];
     const { _id, name, img, completedCase, description } = service;
 
@@ -62,7 +63,7 @@ const WriteAReview = () => {
                     <div className='lg:flex justify-between gap-3 mx-5 lg:mx-0 '>
                         <div>
                             <label htmlFor="reviewerName">Your Name</label>
-                            <input onBlur={handleFieldValue} type="text" name="reviewerName" id="reviewerName" placeholder="Enter Your Name" className="w-full px-4 py-3 rounded-md text-gray-900" />
+                            <input onChange={handleFieldValue} type="text" name="reviewerName" id="reviewerName" placeholder="Enter Your Name" className="w-full px-4 py-3 rounded-md text-gray-900" />
                         </div>
                         <div>
                             <label htmlFor="email">Your Email</label>
@@ -72,7 +73,7 @@ const WriteAReview = () => {
                     <div className='lg:flex gap-3 justify-between items-center mx-5 lg:mx-0'>
                         <div>
                             <label htmlFor="reviewerImage">Profile Picture</label>
-                            <input onBlur={handleFieldValue} type="text" name="reviewerImage" id="reviewerImage" placeholder="Your Your Photo URL" className="w-full px-4 py-3 rounded-md text-gray-900" />
+                            <input onChange={handleFieldValue} type="text" name="reviewerImage" id="reviewerImage" placeholder="Your Your Photo URL" className="w-full px-4 py-3 rounded-md text-gray-900" />
                             <p className='text-jane2nd'>Picture Dimention 250 X 250 pixels</p>
                         </div>
                         <div>
@@ -103,7 +104,7 @@ const WriteAReview = () => {
                     </div>
                     <div className="space-y-1 text-lg mx-5 lg:mx-0">
                         <label htmlFor="description" className="block">Write your Experience</label>
-                        <textarea onBlur={handleFieldValue} name="description" id="description" placeholder="Write your Experience" className="w-full px-4 py-3 rounded-md text-gray-900" />
+                        <textarea onChange={handleFieldValue} name="description" id="description" placeholder="Write your Experience" className="w-full px-4 py-3 rounded-md text-gray-900" />
                     </div>
                     <button type='submit' className="block w-full p-3 text-center text-gray-900 font-bold bg-jane2nd rounded-3xl">Submit Review</button>
                 </form>

@@ -4,6 +4,7 @@ import { MdDeleteForever } from 'react-icons/md';
 
 const MyServiceDisplay = ({ service }) => {
     const { _id, name, serviceCost, completedCase, description, rating } = service;
+
     return (
         <div>
             <div className='bg-white py-5 px-4 mb-5 rounded-lg shadow-lg'>
