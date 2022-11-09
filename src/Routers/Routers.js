@@ -1,6 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layout/Main";
 import AddService from "../Pages/AddService/AddService";
+import Blogs from "../Pages/Blogs/Blogs";
+import PostBlog from "../Pages/Blogs/PostBlog";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
@@ -63,6 +65,16 @@ export const Routers = createBrowserRouter([
                 path: '/service/edit/:id',
                 loader: ({params}) => fetch(`http://localhost:5000/services/${params.id}`),
                 element: <PrivateRouter><EditService></EditService></PrivateRouter>
+            },
+            //Blogs route
+            {
+                path: '/blogs',
+                element: <Blogs></Blogs>
+            },
+            //Write a Blog route and it is private route
+            {
+                path: '/blog/publish',
+                element: <PrivateRouter><PostBlog></PostBlog></PrivateRouter>
             }
         ],
         errorElement: <ErrorPage></ErrorPage>
