@@ -55,9 +55,8 @@ const EditReview = () => {
 
 
     return (
-        <div className='w-11/12 lg:w-10/12 mx-auto justify-center my-5'>
-
-            <div className="w-full lg:w-8/12 py-8 rounded-xl bg-jane text-white flex flex-col items-center">
+        <div className='w-11/12 mx-auto flex justify-center my-10'>
+            <div className="w-full lg:w-7/12 py-8 rounded-xl bg-jane text-white flex flex-col items-center">
                 <h1 className="text-2xl font-bold text-center mb-5">Update Your Review</h1>
                 <form onSubmit={updateReview} className="space-y-4">
                     <div className='lg:flex justify-between gap-3 mx-5 lg:mx-0 '>
@@ -106,7 +105,7 @@ const EditReview = () => {
                         <label htmlFor="description" className="block">Edit your Experience</label>
                         <textarea onChange={handleFieldValue} name="description" id="description" defaultValue={description} placeholder={description} className="w-full px-4 py-3 rounded-md text-gray-900" />
                     </div>
-                    <button type='submit' className="block w-full p-3 text-center text-gray-900 font-bold bg-jane2nd rounded-3xl">Update Review</button>
+                    <button type='submit' className="block w-full p-3 text-center text-white font-bold bg-jane2nd rounded-3xl">Update Review</button>
                 </form>
             </div>
         </div>

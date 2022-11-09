@@ -4,6 +4,7 @@ import AddService from "../Pages/AddService/AddService";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import EditReview from "../Pages/MyReviewsServices/EditReview";
+import EditService from "../Pages/MyReviewsServices/EditService";
 import MyReviewsServices from "../Pages/MyReviewsServices/MyReviewsServices";
 import Register from "../Pages/Register/Register";
 import ServiceDetails from "../Pages/ServiceDetails/ServiceDetails";
@@ -39,20 +40,29 @@ export const Routers = createBrowserRouter([
                 path: '/add-service',
                 element:<PrivateRouter><AddService></AddService></PrivateRouter>
             },
+            //Write a Review Route and I am using loader beacuase I am showing related service on the right side wite review page on which  User is writing review, 
             {
                 path:'/write-review/:id',
                 loader: ({params}) => fetch(`http://localhost:5000/services/${params.id}`),
                 element:<PrivateRouter><WriteAReview></WriteAReview></PrivateRouter>
             }
             ,
+            //Activity page, where I am showing all reviews and all services added by the user
             {
                 path: '/activity',
                 element: <PrivateRouter><MyReviewsServices></MyReviewsServices></PrivateRouter>
             },
+            //Editing Review route and we are loading the review for edit, as we need its value and specially it's id
             {
                 path:'/review/edit/:id',
                 loader: ({params}) => fetch(`http://localhost:5000/reviews/${params.id}`),
                 element: <PrivateRouter><EditReview></EditReview></PrivateRouter>
+            },
+            //Editing Service route and we are loading the Service for edit, as we need its value and specially it's id
+            {
+                path: '/service/edit/:id',
+                loader: ({params}) => fetch(`http://localhost:5000/services/${params.id}`),
+                element: <PrivateRouter><EditService></EditService></PrivateRouter>
             }
         ]
     }
