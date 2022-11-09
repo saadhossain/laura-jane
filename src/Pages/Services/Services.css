@@ -1,0 +1,18 @@
+.page-btn{
+    background-color: #183a55;
+    color:#fff;
+    padding: 5px 15px;
+    font-weight: 700;
+    margin-right: 10px;
+    border-radius: 10%;
+    cursor: pointer;
+}
+.page-selected{
+    background-color: #03C0A8;
+    color:#fff;
+    padding: 5px 15px;
+    font-weight: 700;
+    margin-right: 10px;
+    border-radius: 10%;
+    cursor: pointer;
+}

@@ -31,7 +31,7 @@ const MyReviewsServices = () => {
     }, [email, logOut]);
     //Fetch Services from the server using email as query string
     useEffect(()=> {
-        fetch(`http://localhost:5000/services?email=${email}`, {
+        fetch(`http://localhost:5000/services/user?email=${email}`, {
             headers: {
                 'authorization' : `Bearer ${localStorage.getItem('Access_Token')}`
             }
