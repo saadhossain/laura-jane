@@ -3,6 +3,8 @@ import { MdRateReview } from 'react-icons/md';
 import { Link, useLoaderData } from 'react-router-dom';
 import ReviewShowCase from '../../Componets/ReviewShowCase';
 import { AuthContext } from '../../Context/AuthProvider';
+import 'react-photo-view/dist/react-photo-view.css';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
 
 const ServiceDetails = () => {
     //Get user from the Context/Auth
@@ -22,13 +24,17 @@ const ServiceDetails = () => {
     return (
         <div className='w-11/12 lg:w-10/12 mx-auto my-5 lg:flex gap-5'>
             <div className='w-full lg:w-2/4 relative bg-slate-100 rounded-lg shadow-xl'>
-                <img src={img} alt={name} className='w-full rounded-t-lg' />
+                <PhotoProvider>
+                    <PhotoView src={img}>
+                    <img src={img} alt={name} className='w-full rounded-t-lg' />
+                    </PhotoView>
+                </PhotoProvider>
                 <button className='bg-jane2nd rounded-lg py-1 px-2 text-white font-semibold absolute top-2 left-2 shadow-xl'>Success :{completedCase} Case</button>
                 <div className='p-5 flex flex-col gap-2'>
                     <h2 className='text-2xl font-semibold text-jane'>{name}</h2>
                     <div className='flex justify-between items-center'>
                         <h4 className='text-lg font-semibold text-jane'>Service Fee : ${serviceCost}</h4>
-                        <p className='font-semibold bg-jane2nd text-white py-1 px-2 rounded-2xl'>Rating: {rating.rate} Total {rating.total} (person)</p>
+                        <p className='font-semibold bg-jane2nd text-white py-1 px-2 rounded-2xl'>Rating: {rating.rate} Feedback {rating.total}</p>
                     </div>
                     <p>{description}</p>
                     <p className='font-semibold'>
