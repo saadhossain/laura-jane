@@ -14,7 +14,7 @@ const MyReviewsServices = () => {
     const [services, setServices] = useState();
     //Fetch Reviews from the server using email as query string
     useEffect(()=> {
-        fetch(`http://localhost:5000/reviews?email=${email}`,{
+        fetch(`http://localhost:5000/reviews/user?email=${email}`,{
             headers: {
                 'authorization' : `Bearer ${localStorage.getItem('Access_Token')}`
             }
@@ -86,27 +86,30 @@ const MyReviewsServices = () => {
     return (
         <div className='bg-slate-100'>
             <div className='w-11/12 lg:w-10/12 mx-auto py-5 lg:flex lg:gap-10'>
-                <div className='w-full lg:w-2/4'>
+                <div className='w-full lg:w-2/4 bg-white pb-5 rounded-t-2xl shadow-xl'>
                     <h2 className='text-2xl font-bold bg-jane text-white text-center py-3 rounded-t-lg'>My Reviews</h2>
                     <div>
                         {
-                        reviews?.map(review=> <MyReviewDisplay
+                        reviews?.length ? reviews.map(review=> <MyReviewDisplay
                             key={review._id}
                             review={review}
                             deleteReview={deleteReview}
                         ></MyReviewDisplay>)
+                        : 
+                        <h2 className='text-2xl font-bold text-center text-jane mt-5'>You Haven't any Review Yet</h2>
                         }
                     </div>
                 </div>
-                <div className='w-full lg:w-2/4'>
+                <div className='w-full lg:w-2/4 bg-white pb-5 rounded-t-2xl shadow-xl'>
                     <h2 className='text-2xl font-bold bg-jane text-white text-center py-3 rounded-t-lg'>My Services</h2>
                     <div>
                         {
-                        services?.map(service => <MyServiceDisplay
-                        key={service._id}
-                        service={service}
-                        deleteService={deleteService}
-                        ></MyServiceDisplay>) 
+                            services?.length ? services.map(service => <MyServiceDisplay
+                                key={service._id}
+                                service={service}
+                                deleteService={deleteService}
+                                ></MyServiceDisplay>) 
+                        :  <h2 className='text-2xl font-bold text-center text-jane mt-5'>You Haven't any Service Yet</h2>
                         }
                     </div>
                 </div>
