@@ -1,7 +1,6 @@
 import React from 'react';
 import { MdStarRate } from 'react-icons/md';
 const ReviewShowCase = ({ review }) => {
-    console.log(review);
     const { reviewerImg, reviewerName, rating, description, reviewPlace } = review;
     return (
         <div>

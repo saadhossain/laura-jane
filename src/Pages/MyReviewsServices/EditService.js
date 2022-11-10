@@ -19,7 +19,6 @@ const EditService = () => {
         const updatedDetails = { ...serviceDetails };
         updatedDetails[field] = value;
         setServiceDetails(updatedDetails)
-        console.log(updatedDetails);
 
     }
     //Store all Service data to make it easier to send via body

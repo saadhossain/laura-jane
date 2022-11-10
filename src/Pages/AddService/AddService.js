@@ -33,7 +33,6 @@ const AddService = () => {
     //Handle Post/Create/Add new Service
     const handleAddService = (e) => {
         e.preventDefault()
-        console.log(serviceData);
         fetch('https://laura-jane.vercel.app/services/add', {
             method: 'POST',
             headers: {

@@ -27,7 +27,6 @@ const EditReview = () => {
     //Handle Adding Review functionality
     const updateReview = (e) => {
         e.preventDefault();
-        console.log(reviewData);
         fetch(`https://laura-jane.vercel.app/reviews/update/${_id}`, {
             method: 'PUT',
             headers: {

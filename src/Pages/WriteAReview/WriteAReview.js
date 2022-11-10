@@ -28,7 +28,6 @@ const WriteAReview = () => {
     //Handle Adding Review functionality
     const handleAddReview = (e) => {
         e.preventDefault();
-        console.log(reviewData);
         fetch('https://laura-jane.vercel.app/reviews/write', {
             method: 'POST',
             headers: {

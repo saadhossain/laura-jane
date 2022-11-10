@@ -8,7 +8,6 @@ const Services = () => {
     //Store total data count to this state
     const [totalService, setTotalService] = useState(0)
     const [servicePerPage, setServicePerPage] = useState(6)
-    console.log(servicePerPage);
     //Current Page Number
     const [currentPage, setCurrentPage] = useState();
     //Calculate total page based on total service and total service to show per page

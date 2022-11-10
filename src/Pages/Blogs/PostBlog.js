@@ -31,7 +31,6 @@ const PostBlog = () => {
     //Handle Post/Create/Add new Service
     const handleAddService = (e) => {
         e.preventDefault()
-        console.log(blogData);
         fetch('https://laura-jane.vercel.app/blog/add', {
             method: 'POST',
             headers: {
