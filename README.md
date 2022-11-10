@@ -1,6 +1,6 @@
 # Laura Jane - Law Professional Website
 
-## Live website can view here [https://laura-jane.web.app/services](https://laura-jane.web.app/services)
+## Live website can view here [https://laura-jane.web.app/](https://laura-jane.web.app/)
 
 ## Features of thie website
 * View Services providing by laura
