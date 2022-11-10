@@ -14,6 +14,7 @@
 * Login with Google
 * Login with GitHub
 * You Can See Latest Articles and Blogs [Here](https://laura-jane.web.app/blogs)
+* User Can reset password from Login page by clicking **Forgot Password**
 ## Logged In User Feature
 * You can **Write a Review** for a Specific Service
 * You Can **Add A Service** form [Here](https://laura-jane.web.app/add-service)
