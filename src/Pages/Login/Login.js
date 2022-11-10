@@ -22,7 +22,7 @@ const Login = () => {
                 }
                 toast.success('Login Successful...')
                 //Get the access token from the server
-                fetch('http://localhost:5000/getaccesstoken', {
+                fetch('https://laura-jane.vercel.app/getaccesstoken', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
@@ -32,7 +32,7 @@ const Login = () => {
                     .then(res => res.json())
                     .then(data => {
                         localStorage.setItem('Access_Token', data.token);
-                        navigate(from, {replace: true})
+                        navigate(from, { replace: true })
                     })
                     .catch(err => console.error(err))
             })

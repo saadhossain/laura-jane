@@ -29,7 +29,7 @@ const WriteAReview = () => {
     const handleAddReview = (e) => {
         e.preventDefault();
         console.log(reviewData);
-        fetch('http://localhost:5000/reviews/write', {
+        fetch('https://laura-jane.vercel.app/reviews/write', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

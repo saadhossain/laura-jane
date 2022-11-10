@@ -28,13 +28,13 @@ const AddService = () => {
         },
         img: serviceDetails?.serviceImg,
         addedBy: user.email,
-        addedOn : new Date()
+        addedOn: new Date()
     }
     //Handle Post/Create/Add new Service
     const handleAddService = (e) => {
         e.preventDefault()
         console.log(serviceData);
-        fetch('http://localhost:5000/services/add', {
+        fetch('https://laura-jane.vercel.app/services/add', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -15,7 +15,7 @@ const Services = () => {
     const totalPage = Math.ceil(totalService / servicePerPage)
     //Get All Data and totalDatacount from the Database
     useEffect(() => {
-        fetch(`http://localhost:5000/services?servicePerPage=${servicePerPage}&currentPage=${currentPage}`)
+        fetch(`https://laura-jane.vercel.app/services?servicePerPage=${servicePerPage}&currentPage=${currentPage}`)
             .then(res => res.json())
             .then(data => {
                 setServices(data.result)

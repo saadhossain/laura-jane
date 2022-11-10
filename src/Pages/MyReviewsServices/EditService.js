@@ -10,7 +10,7 @@ const EditService = () => {
     const navigate = useNavigate()
     //Get single Service that we editing
     const service = useLoaderData()[0];
-    const {_id, name, img, completedCase, description, serviceCost, rating} = service;
+    const { _id, name, img, completedCase, description, serviceCost, rating } = service;
     //Store all Field value when user input
     const [serviceDetails, setServiceDetails] = useState()
     const handleFieldValue = (e) => {
@@ -26,7 +26,7 @@ const EditService = () => {
     //Here I am storing data conditionally because if anyone can't change any of the field then data will be undefiened, so to prevent this I am using conditons
     const serviceData = {
         name: serviceDetails?.title ? serviceDetails.title : name,
-        description: serviceDetails?.description ? serviceDetails.description :description ,
+        description: serviceDetails?.description ? serviceDetails.description : description,
         serviceCost: serviceDetails?.fees ? serviceDetails.fees : serviceCost,
         completedCase: serviceDetails?.completed ? serviceDetails.completed : completedCase,
         rating: {
@@ -39,7 +39,7 @@ const EditService = () => {
     //Handle Post/Create/Add new Service
     const handleUpdateService = (e) => {
         e.preventDefault()
-        fetch(`http://localhost:5000/services/edit/${_id}`, {
+        fetch(`https://laura-jane.vercel.app/services/edit/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -73,7 +73,7 @@ const EditService = () => {
                             <input onChange={handleFieldValue} type="text" name="serviceImg" id="serviceImg" defaultValue={img} placeholder={img} className="w-full px-4 py-3 rounded-md text-gray-900" />
                             <p className='text-jane2nd'>Picture Dimention 450 X 250 pixels</p>
                         </div>
-                        <img src={img} alt={name} className='w-32 rounded-lg hidden lg:block'/>
+                        <img src={img} alt={name} className='w-32 rounded-lg hidden lg:block' />
                     </div>
                     {/* Input Fields Second Row */}
                     <div className='grid grid-cols-2 lg:grid-cols-4 gap-3 mx-2 lg:mx-0 '>

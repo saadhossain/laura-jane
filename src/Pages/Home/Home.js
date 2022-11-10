@@ -8,7 +8,7 @@ import ServicesShowcase from '../../Componets/ServicesShowcase';
 const Home = () => {
     const [services, setServices] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/services/limit')
+        fetch('https://laura-jane.vercel.app/services/limit')
             .then(res => res.json())
             .then(data => setServices(data))
     }, [])

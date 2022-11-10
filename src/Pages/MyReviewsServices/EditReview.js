@@ -28,7 +28,7 @@ const EditReview = () => {
     const updateReview = (e) => {
         e.preventDefault();
         console.log(reviewData);
-        fetch(`http://localhost:5000/reviews/update/${_id}`, {
+        fetch(`https://laura-jane.vercel.app/reviews/update/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -37,7 +37,7 @@ const EditReview = () => {
         })
             .then(res => res.json())
             .then(data => {
-                if(data.modifiedCount > 0){
+                if (data.modifiedCount > 0) {
                     toast.success('Your Review has been Updated')
                     navigate('/activity')
                 }

@@ -10,7 +10,7 @@ const Blogs = () => {
     const [blogs, setBlogs] = useState([])
     //Get all blogs from the server
     useEffect(() => {
-        fetch('http://localhost:5000/blogs')
+        fetch('https://laura-jane.vercel.app/blogs')
             .then(res => res.json())
             .then(data => setBlogs(data))
             .catch(err => console.error(err))

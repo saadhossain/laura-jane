@@ -22,17 +22,17 @@ const PostBlog = () => {
         description: blogDetails?.description,
         thumbnail: blogDetails?.thumbnail,
         addedBy: user.email,
-        author : {
+        author: {
             name: user.displayName ? user.displayName : 'Laura Jane',
-            img : user.photoURL ? user.photoURL : 'https://i.ibb.co/mtVG4YQ/laura-jane-author.jpg',
+            img: user.photoURL ? user.photoURL : 'https://i.ibb.co/mtVG4YQ/laura-jane-author.jpg',
         },
-        publishedOn : new Date()
+        publishedOn: new Date()
     }
     //Handle Post/Create/Add new Service
     const handleAddService = (e) => {
         e.preventDefault()
         console.log(blogData);
-        fetch('http://localhost:5000/blog/add', {
+        fetch('https://laura-jane.vercel.app/blog/add', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

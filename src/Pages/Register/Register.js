@@ -4,7 +4,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
 
 const Register = () => {
-    const {userRegistration, updateUser , googleLogin, githubLogin} = useContext(AuthContext);
+    const { userRegistration, updateUser, googleLogin, githubLogin } = useContext(AuthContext);
     //Functionality for rediction after login
     const location = useLocation()
     const navigate = useNavigate()
@@ -18,51 +18,51 @@ const Register = () => {
         const password = form.password.value;
         const profile = form.profile.value;
         userRegistration(email, password)
-        .then((result)=> {
-            const user = result.user;
-            const currentUser = {
-                email: user.email
-            }
-            toast.success('Registration Successful...');
-            //Get the access token from the server
-            fetch('http://localhost:5000/getaccesstoken', {
-                method: 'POST',
-                headers: {
-                    'content-type': 'application/json'
-                },
-                body: JSON.stringify(currentUser)
-            })
-                .then(res => res.json())
-                .then(data => {
-                    localStorage.setItem('Access_Token', data.token);
-                    navigate('/activity')
+            .then((result) => {
+                const user = result.user;
+                const currentUser = {
+                    email: user.email
+                }
+                toast.success('Registration Successful...');
+                //Get the access token from the server
+                fetch('https://laura-jane.vercel.app/getaccesstoken', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(currentUser)
                 })
-                .catch(err => console.error(err))
-            updateUser(fullName, profile)
-            .then(()=>{})
-            .catch(err=> console.error(err))
-        })
-        .catch(err=> console.error(err))
+                    .then(res => res.json())
+                    .then(data => {
+                        localStorage.setItem('Access_Token', data.token);
+                        navigate('/activity')
+                    })
+                    .catch(err => console.error(err))
+                updateUser(fullName, profile)
+                    .then(() => { })
+                    .catch(err => console.error(err))
+            })
+            .catch(err => console.error(err))
         form.reset()
     }
     //Handle Google Registration/login
     const handleGoogleLogin = () => {
         googleLogin()
-        .then((result) => {
-            toast.success('Google Login Successful...')
-            navigate(from, {replace: true})
-        })
-        .catch(err => console.error(err))
+            .then((result) => {
+                toast.success('Google Login Successful...')
+                navigate(from, { replace: true })
+            })
+            .catch(err => console.error(err))
     }
 
     //Handle Github Registration/login
     const handleGithubLogin = () => {
         githubLogin()
-        .then(()=> {
-            toast.success('GitHub Login Successful...')
-            navigate(from, {replace: true})
-        })
-        .catch(err => console.error(err))
+            .then(() => {
+                toast.success('GitHub Login Successful...')
+                navigate(from, { replace: true })
+            })
+            .catch(err => console.error(err))
     }
     return (
         <div className='flex justify-center my-5'>

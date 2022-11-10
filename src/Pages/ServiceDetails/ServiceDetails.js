@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { MdRateReview } from 'react-icons/md';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
 import { Link, useLoaderData } from 'react-router-dom';
 import ReviewShowCase from '../../Componets/ReviewShowCase';
 import { AuthContext } from '../../Context/AuthProvider';
-import { PhotoProvider, PhotoView } from 'react-photo-view';
 
 const ServiceDetails = () => {
     //Get user from the Context/Auth
@@ -15,7 +15,7 @@ const ServiceDetails = () => {
     const [reviews, setReviews] = useState([]);
     //Fetch Data using query, while quering pass single service id;
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews?serviceId=${_id}`)
+        fetch(`https://laura-jane.vercel.app/reviews?serviceId=${_id}`)
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [_id])
@@ -25,7 +25,7 @@ const ServiceDetails = () => {
             <div className='w-full lg:w-2/4 relative bg-slate-100 rounded-lg shadow-xl'>
                 <PhotoProvider>
                     <PhotoView src={img}>
-                    <img src={img} alt={name} className='w-full rounded-t-lg' />
+                        <img src={img} alt={name} className='w-full rounded-t-lg' />
                     </PhotoView>
                 </PhotoProvider>
                 <button className='bg-jane2nd rounded-lg py-1 px-2 text-white font-semibold absolute top-2 left-2 shadow-xl'>Success :{completedCase} Case</button>
