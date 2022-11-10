@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import ServicesShowcase from '../../Componets/ServicesShowcase';
+import useTitle from '../../hooks/useTitle';
 import './Services.css';
 
 const Services = () => {
+    //Set page title
+    useTitle('Services')
     //Store data to this state
     const [services, setServices] = useState([])
     //Store total data count to this state

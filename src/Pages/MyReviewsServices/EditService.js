@@ -2,8 +2,11 @@ import React, { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
 import { useLoaderData, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 
 const EditService = () => {
+    //Set page title
+    useTitle('Edit Service')
     //Get Logged in user from context
     const { user } = useContext(AuthContext);
     //Use Navigate to redirect user to their activity dashboard after successful service update

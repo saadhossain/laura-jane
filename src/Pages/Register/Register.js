@@ -2,8 +2,11 @@ import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 
 const Register = () => {
+    //Set page title
+    useTitle('Register')
     const { userRegistration, updateUser, googleLogin, githubLogin } = useContext(AuthContext);
     //Functionality for rediction after login
     const location = useLocation()

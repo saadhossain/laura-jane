@@ -1,10 +1,13 @@
 import React, { useContext, useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../../Context/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 import MyReviewDisplay from './MyReviewDisplay';
 import MyServiceDisplay from './MyServiceDisplay';
 
 const MyReviewsServices = () => {
+    //Set page title
+    useTitle('My Reviews & Services')
     //Get the user from Context/Auth
     const { user, logOut } = useContext(AuthContext);
     const email = user?.email;

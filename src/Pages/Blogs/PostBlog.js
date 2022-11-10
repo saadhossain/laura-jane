@@ -1,8 +1,11 @@
 import React, { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
 import { AuthContext } from '../../Context/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 
 const PostBlog = () => {
+    //Set page title
+    useTitle('Publish Article')
     //Get Logged in user from context
     const { user } = useContext(AuthContext);
 

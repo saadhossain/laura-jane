@@ -5,7 +5,10 @@ import HomeCarousel from '../../Componets/HomeCarousel';
 import PersonalizedAttention from '../../Componets/PersonalizedAttention';
 import ReputationSection from '../../Componets/ReputationSection';
 import ServicesShowcase from '../../Componets/ServicesShowcase';
+import useTitle from '../../hooks/useTitle';
 const Home = () => {
+    //Set page title
+    useTitle('Home')
     const [services, setServices] = useState([])
     useEffect(() => {
         fetch('https://laura-jane.vercel.app/services/limit')

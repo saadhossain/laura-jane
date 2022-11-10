@@ -2,9 +2,12 @@ import React, { useContext, useEffect, useState } from 'react';
 import { MdRateReview } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 import BlogShowCase from './BlogShowCase';
 
 const Blogs = () => {
+    //set page title
+    useTitle('Blogs')
     //Get the Logged in user from context/auth
     const { user } = useContext(AuthContext)
     const [blogs, setBlogs] = useState([])

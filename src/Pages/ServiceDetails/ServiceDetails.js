@@ -4,8 +4,11 @@ import { PhotoProvider, PhotoView } from 'react-photo-view';
 import { Link, useLoaderData } from 'react-router-dom';
 import ReviewShowCase from '../../Componets/ReviewShowCase';
 import { AuthContext } from '../../Context/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 
 const ServiceDetails = () => {
+    //Set page title
+    useTitle('Servie Details')
     //Get user from the Context/Auth
     const { user } = useContext(AuthContext)
     //Get Single Service from the loader

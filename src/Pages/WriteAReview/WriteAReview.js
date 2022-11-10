@@ -2,9 +2,12 @@ import React, { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
 import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 import './WriteReview.css';
 
 const WriteAReview = () => {
+    //Set page title
+    useTitle('Write a Review')
     const { user } = useContext(AuthContext);
     //Get single Service we are writing review on it
     const service = useLoaderData()[0];

@@ -3,8 +3,11 @@ import toast from 'react-hot-toast';
 // import toast from 'react-hot-toast';
 import { useLoaderData, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 
 const EditReview = () => {
+    //Set page title
+    useTitle('Edit Review')
     const { user } = useContext(AuthContext);
     const review = useLoaderData()[0];
     const { _id, serviceId, reviewerName, rating, reviewerImg, description } = review;

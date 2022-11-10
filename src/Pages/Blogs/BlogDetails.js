@@ -1,9 +1,12 @@
 import React from 'react';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import { useLoaderData } from 'react-router-dom';
+import useTitle from '../../hooks/useTitle';
 
 const BlogDetails = () => {
     const blog = useLoaderData()[0]
+    //Set title
+    useTitle('Blog Details')
     const { title, thumbnail, description, author, publishedOn } = blog
     return (
         <div className='w-11/12 lg:w-8/12 mx-auto my-5'>
