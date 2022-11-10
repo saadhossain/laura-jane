@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+# Laura Jane - Law Professional Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Live website can view here [https://laura-jane.web.app/](https://laura-jane.web.app/)
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Features of thie website
+* View Services providing by laura
+* Latest 3 Service will be shown on [Home](https://laura-jane.web.app/) page and all the services shown on the [Services](https://laura-jane.web.app/services) page
+* User Can Filter Services by their Choose, **3 Service**, **6 Service**, **12 Service** and **15 Service** Per Page
+* User Can see details of Each Service in the Service details page
+* User can see all the reviews by the client for specific service
+* You Can Leave your Review for a Specific Service, By Clicking on **Write A Review**
+* To Write a Review you have to [login](https://laura-jane.web.app/login), there are 3 Difference types of login system I implement in this site
+* Login with Email and Password
+* Login with Google
+* Login with GitHub
+* You Can See Latest Articles and Blogs [Here](https://laura-jane.web.app/blogs)
+## Logged In User Feature
+* You can **Write a Review** for a Specific Service
+* You Can **Add A Service** form [Here](https://laura-jane.web.app/add-service)
+* You Can See All of Your **Reviews** and **Services** from your [My Reviews & Services](https://laura-jane.web.app/activity) Page
+* From [My Reviews & Services](https://laura-jane.web.app/activity) Page You Can **Edit** or **Delete** your **Review** and **Services**
+* As a Logged in User you can post **Blog** [Publish a Blog](https://laura-jane.web.app/blog/publish), you will See **Publish A Blog** At the top of **Blogs** Page
+## Packages Used in this Project
+#### Tailwind CSS
+* As CSS FrameWork/Styling
+```
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+```
+#### React Router Dom
+* For Routing/single page website
+```
+npm install react-router-dom
+```
+#### Daisy UI and Mamba UI
+* For Prebuild Components
+```
+npm install daisyui
+```
+#### Firebase 
+* For Authentication/login
+```
+npm install firebase
+```
+#### React Hot Toast
+* For showing Popup/information after action complete
+```
+npm install react-hot-toast
+```
+#### React Icons
+* For using icons on the site
+```
+npm install react-icons --save
+```
+#### React Photo View
+* When User click Services photo he/she will see it's full view
+```
+npm i react-photo-view
+```
