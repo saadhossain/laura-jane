@@ -43,17 +43,51 @@ const Login = () => {
     const handleGoogleLogin = () => {
         googleLogin()
             .then((result) => {
+                const user = result.user;
+                const currentUser = {
+                    email: user.email
+                }
                 toast.success('Google Login Successful...')
-                navigate(from, { replace: true })
+                //Get the access token from the server
+                fetch('https://laura-jane.vercel.app/getaccesstoken', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(currentUser)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        localStorage.setItem('Access_Token', data.token);
+                        navigate(from, { replace: true })
+                    })
+                    .catch(err => console.error(err))
             })
             .catch(err => console.error(err))
     }
     //Handle Github Registration/login
     const handleGithubLogin = () => {
         githubLogin()
-            .then(() => {
+            .then((result) => {
+                const user = result.user;
+                const currentUser = {
+                    email: user.email
+                }
                 toast.success('GitHub Login Successful...')
-                navigate(from, { replace: true })
+                //Get the access token from the server
+                fetch('https://laura-jane.vercel.app/getaccesstoken', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(currentUser)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        localStorage.setItem('Access_Token', data.token);
+                        navigate(from, { replace: true })
+                    })
+                    .catch(err => console.error(err))
             })
             .catch(err => console.error(err))
     }
