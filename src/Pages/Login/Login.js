@@ -8,7 +8,7 @@ const Login = () => {
     //Functionality for rediction after login
     const location = useLocation()
     const navigate = useNavigate()
-    const from = location.state?.from?.pathname || '/'
+    const from = location.state?.from?.pathname || '/activity'
     const handleLogin = (e) => {
         e.preventDefault();
         const form = e.target;

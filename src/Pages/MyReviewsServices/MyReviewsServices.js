@@ -86,7 +86,7 @@ const MyReviewsServices = () => {
     return (
         <div className='bg-slate-100'>
             <div className='w-11/12 lg:w-10/12 mx-auto py-5 lg:flex lg:gap-10'>
-                <div className='w-full lg:w-2/4 bg-white pb-5 rounded-t-2xl shadow-xl'>
+                <div className='w-full lg:w-2/4'>
                     <h2 className='text-2xl font-bold bg-jane text-white text-center py-3 rounded-t-lg'>My Reviews</h2>
                     <div>
                         {
@@ -100,7 +100,7 @@ const MyReviewsServices = () => {
                         }
                     </div>
                 </div>
-                <div className='w-full lg:w-2/4 bg-white pb-5 rounded-t-2xl shadow-xl'>
+                <div className='w-full lg:w-2/4'>
                     <h2 className='text-2xl font-bold bg-jane text-white text-center py-3 rounded-t-lg'>My Services</h2>
                     <div>
                         {

@@ -20,8 +20,24 @@ const Register = () => {
         userRegistration(email, password)
         .then((result)=> {
             const user = result.user;
-            console.log(user);
+            const currentUser = {
+                email: user.email
+            }
             toast.success('Registration Successful...');
+            //Get the access token from the server
+            fetch('http://localhost:5000/getaccesstoken', {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(currentUser)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    localStorage.setItem('Access_Token', data.token);
+                    navigate('/activity')
+                })
+                .catch(err => console.error(err))
             updateUser(fullName, profile)
             .then(()=>{})
             .catch(err=> console.error(err))
