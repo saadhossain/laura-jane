@@ -26,9 +26,11 @@ const Blogs = () => {
                 </Link>
             </div>
             {/* Show All Blogs */}
-            {
-                blogs.map(blog => <BlogShowCase key={blog._id} blog={blog}></BlogShowCase>)
-            }
+            <div className='grid lg:grid-cols-3 gap-5'>
+                {
+                    blogs.map(blog => <BlogShowCase key={blog._id} blog={blog}></BlogShowCase>)
+                }
+            </div>
         </div>
     );
 };

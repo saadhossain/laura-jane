@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layout/Main";
 import AddService from "../Pages/AddService/AddService";
+import BlogDetails from "../Pages/Blogs/BlogDetails";
 import Blogs from "../Pages/Blogs/Blogs";
 import PostBlog from "../Pages/Blogs/PostBlog";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
@@ -75,6 +76,12 @@ export const Routers = createBrowserRouter([
             {
                 path: '/blog/publish',
                 element: <PrivateRouter><PostBlog></PostBlog></PrivateRouter>
+            },
+            //Blog details page
+            {
+                path: '/blog/:id',
+                loader: ({params}) => fetch(`http://localhost:5000/blog/${params.id}`),
+                element: <BlogDetails></BlogDetails>
             }
         ],
         errorElement: <ErrorPage></ErrorPage>

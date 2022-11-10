@@ -3,7 +3,6 @@ import { MdRateReview } from 'react-icons/md';
 import { Link, useLoaderData } from 'react-router-dom';
 import ReviewShowCase from '../../Componets/ReviewShowCase';
 import { AuthContext } from '../../Context/AuthProvider';
-import 'react-photo-view/dist/react-photo-view.css';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 
 const ServiceDetails = () => {

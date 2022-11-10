@@ -2,7 +2,6 @@ import React from 'react';
 import { MdStarRate } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
-import 'react-photo-view/dist/react-photo-view.css';
 
 const ServicesShowcase = ({ service }) => {
     const { _id, name, description, completedCase, img, serviceCost, rating } = service;

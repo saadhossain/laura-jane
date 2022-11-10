@@ -26,7 +26,7 @@ const PostBlog = () => {
             name: user.displayName ? user.displayName : 'Laura Jane',
             img : user.photoURL ? user.photoURL : 'https://i.ibb.co/mtVG4YQ/laura-jane-author.jpg',
         },
-        addedOn : new Date()
+        publishedOn : new Date()
     }
     //Handle Post/Create/Add new Service
     const handleAddService = (e) => {
