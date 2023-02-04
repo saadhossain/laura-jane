@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Zoom } from 'react-reveal';
 import { Link } from 'react-router-dom';
 import AboutSection from '../../Componets/AboutSection';
 import HomeCarousel from '../../Componets/HomeCarousel';
@@ -21,10 +22,12 @@ const Home = () => {
             <h1 className='text-3xl lg:text-6xl font-bold text-jane text-center my-2 lg:my-5'>Featured Services</h1>
             <div className='w-11/12 lg:w-10/12 mx-auto grid lg:grid-cols-3 gap-5 my-2 lg:my-5'>
                 {
-                    services.map(service => <ServicesShowcase
+                    services.map(service => <Zoom>
+                        <ServicesShowcase
                         key={service._id}
                         service={service}
-                    ></ServicesShowcase>)
+                    ></ServicesShowcase>
+                    </Zoom>)
                 }
             </div>
             <div className='flex justify-center my-5'>
