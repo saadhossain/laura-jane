@@ -1,5 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
+import { BiMessageSquareEdit } from 'react-icons/bi';
+import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
 import useTitle from '../../hooks/useTitle';
 import MyReviewDisplay from './MyReviewDisplay';
@@ -104,7 +106,13 @@ const MyReviewsServices = () => {
                     </div>
                 </div>
                 <div className='w-full lg:w-2/4'>
-                    <h2 className='text-2xl font-bold bg-jane text-white text-center py-3 rounded-t-lg'>My Services</h2>
+                    <div className='flex bg-jane py-3 rounded-t-lg justify-between px-10 text-2xl font-bold  text-white'>
+                        <h2>My Services</h2>
+                        <Link to='/add-service' className='flex'>
+                            <BiMessageSquareEdit className='h-5 w-5 lg:h-8 lg:w-10 text-white' title='Edit Review'></BiMessageSquareEdit>
+                            <h2>Add</h2>
+                        </Link>
+                    </div>
                     <div>
                         {
                             services?.length ? services.map(service => <MyServiceDisplay

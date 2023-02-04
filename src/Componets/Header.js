@@ -32,8 +32,7 @@ const Header = () => {
                             user?.email
                             
                             ? <>
-                            <li className='text-white lg:text-black lg:hover:text-jane'><Link to='/add-service'>Add Service</Link></li>
-                            <li className='text-white lg:text-black lg:hover:text-jane'><Link to='/activity'>My Reviews/Service</Link></li>
+                            <li className='text-white lg:text-black lg:hover:text-jane'><Link to='/activity'>Activity</Link></li>
                             <img src={user?.photoURL ? user.photoURL : 'https://i.ibb.co/mzkVLJt/profile.png'} alt={user?.displayName ? user.displayName : 'Your Profile'} className='w-8 rounded-full'/>
                             <AiOutlineLogout onClick={handleLogOut} className='w-6 h-6 text-white cursor-pointer bg-jane rounded-full p-1'></AiOutlineLogout>
                             </>
