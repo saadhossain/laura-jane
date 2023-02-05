@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from 'react';
+import { useContext } from 'react';
+import Loader from '../../Componets/Loader';
 import ServicesShowcase from '../../Componets/ServicesShowcase';
+import { AuthContext } from '../../Context/AuthProvider';
 import useTitle from '../../hooks/useTitle';
 import './Services.css';
 
 const Services = () => {
-    //Set page title
-    useTitle('Services')
+    const { loading, setLoading } = useContext(AuthContext)
+        //Set page title
+        useTitle('Services')
     //Store data to this state
     const [services, setServices] = useState([])
     //Store total data count to this state
@@ -22,10 +26,13 @@ const Services = () => {
             .then(data => {
                 setServices(data.result)
                 setTotalService(data.count)
+                setLoading(false)
             })
             .catch(err => console.error(err))
-    }, [currentPage, servicePerPage])
-
+    }, [currentPage, servicePerPage, setLoading])
+    if(loading){
+        return <Loader/>
+    }
     return (
         <div>
             <h1 className='text-3xl lg:text-6xl font-bold text-jane text-center my-2 lg:my-5'>All Services</h1>
